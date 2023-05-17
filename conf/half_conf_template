@@ -1,0 +1,25 @@
+server {
+  listen       80;
+  server_name {hostname};
+
+  location /.well-known/acme-challenge/ {
+    proxy_pass http://mainhost:{port};
+  }
+  #return 301 https://{hostname};
+
+}
+#server {
+#  listen 443 ssl;
+#  server_name {hostname};
+#
+#  ssl_certificate /letsencrypt/live/{hostname}/fullchain.pem;
+#  ssl_certificate_key /letsencrypt/live/{hostname}/privkey.pem;
+#
+#  location / {
+#    proxy_set_header Host $host;
+#    proxy_set_header X-Real-IP $remote_addr;
+#    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#    proxy_set_header X-Forwarded-Proto $scheme;
+#    proxy_pass   http://mainhost:8080;
+#  }
+#}

@@ -1,0 +1,10 @@
+docker run \
+        -p {port}:80 \
+        -v "{p}/letsencrypt:/etc/letsencrypt" \
+        certbot/certbot \
+                certonly \
+                --standalone --email admin@{hostname}\
+                --agree-tos \
+                --preferred-challenges http \
+                --keep-until-expiring \
+                -d {hostname} 
