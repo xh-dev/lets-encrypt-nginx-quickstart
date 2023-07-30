@@ -21,7 +21,7 @@ chmod +x *.sh
 
 ## 2. Create a dummy `hello-world-app` for validate the result
 ```shell
-docker run --rm -d -p 8080:8080 --name hello-world-app xethhung/hello-world-web:1.0.0
+docker run --rm -d -p 8080:8080 --name hello-world-app xethhung/hello-world-web
 
 # validate the if it returns a helloworld message
 curl http://localhost:8080
